@@ -61,6 +61,6 @@ gem 'devise', '~> 4.2'
 gem "font-awesome-rails"
 # Use  for create variable ENV
 gem 'figaro', '~> 1.1.1'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'paperclip', '~> 5.2.0'
 gem 'ckeditor', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
