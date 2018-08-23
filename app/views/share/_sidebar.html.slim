@@ -1,0 +1,42 @@
+.share
+  section.each-block
+    .heading
+      h2.heading-name = t(".online_support")
+    .bottom
+      - Support.all.each do |support|
+        table.each-support-block
+          tbody
+            tr
+              td = support.name
+
+              td
+                a href="skype:#{support.skype}?chat"
+                  = image_tag "skype.png", class: "skype-logo"
+            tr
+              td = t(".phone")
+              td
+                span = support.phone
+
+  section.each-block
+    .heading
+      h2.heading-name = t(".category_products")
+    .bottom
+      ul.category-list
+        - @category_products.each do |category|
+          li
+            = link_to category.title, index_product_view_index_path(category.slug)
+  section.each-block
+    .heading
+      h2.heading-name = t(".lasted_post")
+    .bottom
+      ul.news-list
+        - @news.each do |post|
+          li
+            .row
+              .col-sm-4
+                = image_tag post.image.url(:small)
+              .col-sm-8
+                = link_to post.title.truncate(40), show_post_view_index_path("tin-tuc", post.slug)
+        li
+          .text-right
+            = link_to t(".view_more"), index_post_view_index_path("tin-tuc")

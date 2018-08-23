@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="noodp,index,follow" name="robots"
+    meta content=("1 days") name="revisit-after"
+    meta content="vi" http-equiv="content-language"
+    meta content="#{Facebook.first.app_id}" property="fb:app_id"
+    - FacebookAdmin.all.each do |fb_admin|
+      meta content="#{fb_admin.admin_id}" property="fb:admins"
+    title ShopCms
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  - if ["admin", "pages", "category_posts", "posts", "properties", "products", "categories", "projects", "category_projects", "property_projects", "photo_projects", "facebooks", "facebook_admins", "supports"].include? params[:controller]
+    body
+      = render 'layouts/admin'
+  - else
+    body#shop-body
+      #shop-header
+        = render 'layouts/header'
+      #shop-main
+        = yield
+      #shop-footer
+        = render 'layouts/footer'

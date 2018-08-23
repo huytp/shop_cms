@@ -1,0 +1,11 @@
+vi:
+  photo_projects:
+    index:
+      photos: "Danh sách ảnh dự án: "
+      image: "Ảnh"
+    new:
+      new_photo: "Thêm ảnh mới"
+    form:
+      submit: "Tạo mới"
+      update: "Cập nhật"
+      image: "Ảnh"

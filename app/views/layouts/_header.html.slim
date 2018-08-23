@@ -1,0 +1,66 @@
+header
+  .top_line
+    .container
+      .row
+        .col-lg-6.col-md-7.col-sm-12.col-xs-12.pull-left
+          .hidden-xs.hidden-sm.pull-left
+            .contact-header
+              .phone-block
+                a href="tel:123456789"
+                  i.fa.fa-phone
+                  a.text 123456789
+              .email-block
+                a href="mailto:hello@appnet.edu.vn"
+                  i.fa.fa-envelope
+                  a.text hello@appnet.edu.vn
+        .col-lg-6.col-md-5.pull-right.hidden-phone
+
+.page-head
+    nav.navbar.navbar-inverse.shop-menu-main
+      .container
+        .navbar-header
+          button.navbar-toggle.navbar-button data-target="#shop-navbar" data-toggle="collapse" type="button"
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .logo
+            a href="javascript:void(0)"
+              = image_tag "logo.png"
+
+        #shop-navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.pull-right.shop-menu-right
+            li
+              = link_to t(".home_text"), root_path
+            li
+              = link_to t(".overview_text"), show_page_view_index_path("gioi-thieu")
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                = t(".service_text")
+                span.caret
+
+              ul.dropdown-menu
+                li
+                  = link_to t(".construction_service"), index_post_view_index_path("dich-vu-xay-dung")
+                li
+                  = link_to t(".execution_service"), index_post_view_index_path("dich-vu-thi-cong-xay-dung")
+
+            li
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                = t(".product_text")
+                span.caret
+              ul.dropdown-menu
+                - @categories = Category.where(parent_id: 0)
+                - @categories.each do |category|
+                  li
+                    = link_to category.title, index_product_view_index_path(category.slug)
+                    - if(category.childs.size >= 1)
+                      = render "layouts/manager_child", childs: category.childs
+            li
+              = link_to t(".project_text"), index_project_view_index_path("du-an")
+            li
+              = link_to t(".news_text"), index_post_view_index_path("tin-tuc")
+            li
+              = link_to t(".contact_text"), show_page_view_index_path("lien-he")
+            li
+              - if current_user.present?
+                = link_to t(".logout"), destroy_user_session_path, method: :DELETE

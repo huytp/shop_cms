@@ -1,0 +1,6 @@
+ul
+  - childs.each do |child|
+    li
+      = link_to child.title, index_product_view_index_path(child.slug)
+      - if(child.childs.size >= 1)
+        = render "manager_child", childs: child.childs

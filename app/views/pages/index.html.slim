@@ -1,0 +1,23 @@
+p#notice = notice
+.panel.panel-default
+  .panel-heading
+    h3= t(".page_text")
+  table.table.table-responsive.table-striped
+    thead
+      tr
+        th = t(".title")
+        th = t(".slug")
+        th = t(".image")
+        th colspan="4"
+    tbody
+      - @pages.each do |page|
+        tr
+          td = page.title
+          td = page.slug
+          td = image_tag page.image.url(:small)
+          td = link_to 'Show', page
+          td = link_to "", edit_page_path(page), class: "fa fa-edit"
+          td = link_to "", page, method: :delete, data: {confirm: 'Are you sure?'}, class: "fa fa-trash"
+          td = link_to page.active ? "Ngừng hiển thị" : "Cho phép hiển thị", update_active_pages_path(page), method: "post", class: "btn btn-success"
+.form-group
+  = link_to t(".new_page"), new_page_path, class: "btn btn-default"

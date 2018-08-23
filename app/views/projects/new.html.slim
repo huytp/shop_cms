@@ -1,0 +1,7 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new")
+  br
+  = render 'form', project: @project
+  = link_to 'Back', projects_path

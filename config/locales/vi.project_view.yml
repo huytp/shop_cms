@@ -1,0 +1,6 @@
+vi:
+  project_view:
+    index:
+      projects: "Các dự án"
+    show:
+      detail: "Chi tiết dự án: "

@@ -1,0 +1,44 @@
+= form_for(post, html: {class: "form-horizontal"}) do |f|
+  - if post.errors.any?
+    #error_explanation
+      h2
+        = pluralize(post.errors.count, "error")
+        | prohibited this post from being saved:
+      ul
+        - post.errors.full_messages.each do |message|
+          li= message
+  .form-group
+    = f.label t(".title"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label t(".slug"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_field :slug, class: "form-control", placeholder: t(".slug_example")
+  .form-group
+    = f.label t(".category_ids"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = select_tag 'post[category_ids]', options_for_select(get_category_ids, selected: @category_select), multiple: true, required: true, class: "selectpicker form-control"
+  .form-group
+    = f.label t(".content"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.cktext_area :content, class: "form-control"
+  .form-group
+    = f.label t(".meta_keyword"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_field :meta_keyword, class: "form-control"
+  .form-group
+    = f.label t(".meta_title"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_field :meta_title, class: "form-control"
+  .form-group
+    = f.label t(".meta_description"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.text_field :meta_description, class: "form-control"
+  .form-group
+    = f.label t(".image"), class: "col-sm-2 control-label"
+    .col-sm-8
+      = f.file_field :image, class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit params[:action] == "new" ? t(".submit") : t(".update"), class: "btn btn-success"

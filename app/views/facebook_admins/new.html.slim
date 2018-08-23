@@ -1,0 +1,6 @@
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new")
+  br
+  = render 'form', facebook_admin: @facebook_admin
+  = link_to 'Back', facebook_admins_path

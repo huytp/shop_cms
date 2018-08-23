@@ -1,0 +1,36 @@
+p#notice= notice
+p
+  strong Name:
+  = @product.name
+p
+  strong Slug:
+  = @product.slug
+p
+  strong Meta title:
+  = @product.meta_title
+p
+  strong Meta keyword:
+  = @product.meta_keyword
+p
+  strong Meta description:
+  = @product.meta_description
+p
+  strong Old price:
+  = @product.old_price
+p
+  strong New price:
+  = @product.new_price
+p
+  strong Sku:
+  = @product.sku
+p
+  strong Image:
+  = @product.image
+- @product.property.each do |key, value|
+  p
+    strong = Property.find_by_slug(key).name
+    |:
+    = value
+= link_to 'Edit', edit_product_path(@product)
+| \
+= link_to 'Back', products_path

@@ -1,0 +1,30 @@
+.project-view
+  .container
+    .promo-text = @project.name
+    #project-page
+        .col-sm-7.image-slider
+          #slider.flexslider
+            ul.slides
+              - @project.photo_projects.each do |photo|
+                li
+                  = image_tag photo.image.url(:large)
+          #carousel.flexslider
+            ul.slides
+              - @project.photo_projects.each do |photo|
+                li
+                  = image_tag photo.image.url(:large)
+        .col-sm-5.project-details
+          - @project.property.each do |k,v|
+              .row
+                .col-sm-5
+                  p = PropertyProject.find_by_slug(k).name
+                .col-sm-7
+                  p = v
+          .row
+            .col-sm-12
+              .detail = t(".detail")
+              = raw @project.description
+          .row
+            .col-sm-12
+              - if @facebook.like_active
+                  .fb-like data-action="like" data-href="#{request.original_url}" data-layout="button_count" data-share="true" data-show-faces="true" data-size="small"

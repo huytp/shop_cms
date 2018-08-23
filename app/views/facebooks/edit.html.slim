@@ -1,0 +1,9 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".edit")
+  br
+  .row
+    .col-sm-10
+      = render 'form', facebook: @facebook
+  = link_to 'Back', facebooks_path

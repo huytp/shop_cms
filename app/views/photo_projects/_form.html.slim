@@ -1,0 +1,15 @@
+.col-sm-12
+  = form_for(photo_project, url: project_photo_projects_path) do |f|
+    - if photo_project.errors.any?
+      #error_explanation
+        h2
+          = pluralize(photo_project.errors.count, "error")
+          | prohibited this photo_project from being saved:
+        ul
+          - photo_project.errors.full_messages.each do |message|
+            li= message
+    .form-group
+      = f.label t(".image"), class: "control-label"
+      = f.file_field :image, class: "form-control"
+    .form-group
+      = f.submit params[:action] == "new" ? t(".submit") : t(".update"), class: "btn btn-success"

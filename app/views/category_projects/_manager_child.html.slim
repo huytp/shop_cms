@@ -1,0 +1,6 @@
+ul
+  - childs.each do |child|
+    li
+      = child.title
+      - if(child.childs.size >= 1)
+        = render "layouts/manager_child", childs: child.childs

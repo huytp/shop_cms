@@ -1,0 +1,57 @@
+section.product-list
+  .container
+    .row
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+        .heading
+          .row
+            .col-lg-6.col-md-6
+              h2.heading-name = t(".feature_product")
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+        .tab-content
+          #product-list-tab1.tab-pane.active role="tabpanel"
+            .owl-p.owl-new
+              .item
+                .row
+                  - @feature_product.each do |product|
+                    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                      .product-item
+                        .product-item-thumbnail
+                          .product-item-background
+                            .product-item-button
+                              a.product-item-view href="#{show_product_view_index_path(product.categories.first.slug, product.slug)}"  Xem chi tiết
+                          = image_tag product.image.url(:small), class: "img-responsive"
+                        p.product-item-price
+                          span.product-item-price-on = product.new_price.present? ? number_to_currency(product.new_price, unit: "đ", format: "%n %u", precision: 0) : t(".contact")
+                          |&nbsp
+                          span.product-item-price-sale = product.old_price.present? ? number_to_currency(product.old_price, unit: "đ", format: "%n %u", precision: 0) : t(".contact")
+                        h3.product-item-name
+                          = link_to product.name.truncate(30), show_product_view_index_path(product.categories.first.slug, product.slug)
+section.product-list
+  .container
+    .row
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+        .heading
+          .row
+            .col-lg-6.col-md-6
+              h2.heading-name = t(".lasted_product")
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12
+        .tab-content
+          #product-list-tab1.tab-pane.active role="tabpanel"
+            .owl-p.owl-new
+              .item
+                .row
+                  - @lasted_product.each do |product|
+                    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                      .product-item
+                        .product-item-thumbnail
+                          .product-item-background
+                            .product-item-button
+                              a.product-item-view href="#{show_product_view_index_path(product.categories.first.slug, product.slug)}"  Xem chi tiết
+                          = image_tag product.image.url(:small), class: "img-responsive"
+                        p.product-item-price
+                          span.product-item-price-on = product.new_price.present? ? number_to_currency(product.new_price, unit: "đ", format: "%n %u", precision: 0) : t(".contact")
+                          |&nbsp
+                          span.product-item-price-sale = product.old_price.present? ? number_to_currency(product.old_price, unit: "đ", format: "%n %u", precision: 0) : t(".contact")
+                        h3.product-item-name
+                          = link_to product.name.truncate(30), show_product_view_index_path(product.categories.first.slug, product.slug)
+

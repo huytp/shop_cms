@@ -1,0 +1,11 @@
+vi:
+  home:
+    introduce:
+      overview: "Giới thiệu"
+      feature_project: "Dự án nổi bật"
+      view_detail: "XEM CHI TIẾT"
+    product:
+      feature_product: "Sản phẩm nổi bật"
+      lasted_product: "Sản phẩm mới nhất"
+      contact: "Liên hệ"
+    slider:

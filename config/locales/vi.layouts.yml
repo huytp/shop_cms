@@ -1,0 +1,18 @@
+vi:
+  layouts:
+    header:
+      home_text: "Trang chủ"
+      overview_text: "Giới thiệu"
+      service_text: "Dịch vụ"
+      construction_service: "DV xây dựng "
+      execution_service: "DV thi công xây dựng"
+      project_text: "Dự án"
+      news_text: "Tin tức"
+      contact_text: "Liên hệ"
+      product_text: "Sản phẩm "
+    footer:
+      contact: "Liên hệ"
+      map: "Bản đồ"
+      payment_method: "Hình thức thanh toán"
+      sale_off_news: "Tin khuyến mãi"
+      recruitment: "Tuyển dụng"

@@ -1,0 +1,33 @@
+vi:
+  products:
+    index:
+      sku: "Mã sản phẩm"
+      name: "Tên sản phẩm"
+      slug: "Slug"
+      old_price: "Giá gốc"
+      new_price: "Giá khuyến mãi"
+      image: "Ảnh"
+      product_list: "Danh sách sản phẩm"
+      new: "Thêm sản phẩm"
+      feature: "Nổi bật"
+      lasted: "Mới nhất"
+      category: "Thuộc nhóm"
+    form:
+      sku: "Mã sản phẩm"
+      name: "Tên sản phẩm"
+      slug: "Slug"
+      slug_example: "ten-san-pham"
+      content: "Thông tin chi tiết"
+      meta_keyword: "Thẻ meta keyword"
+      meta_title: "Thẻ meta title"
+      meta_description: "Thẻ meta description"
+      image: "Hình ảnh"
+      submit: "Tạo mới"
+      update: "Cập nhật"
+      old_price: "Giá gốc"
+      new_price: "Giá khuyến mãi"
+      category_ids: "Thuộc nhóm sản phẩm"
+    new:
+      new: "Thêm sản phẩm mới"
+    edit:
+      edit: "Chỉnh sửa"

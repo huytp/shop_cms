@@ -1,0 +1,7 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new_photo")
+  br
+  = render 'form', photo_project: @photo_project
+  = link_to 'Back', project_photo_projects_path

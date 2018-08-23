@@ -1,0 +1,69 @@
+.product-view-show
+  .container
+    .row
+      .col-sm-9
+        .promo-text = t(".product_overview")
+        .main-content.row#shop-product
+          .col-sm-6
+            = image_tag @product.image.url(:large)
+          .col-sm-6
+            .row
+              .col-sm-5
+                p = t(".name")
+              .col-sm-7
+                p = @product.name
+            .row
+              .col-sm-5
+                p = t(".sku")
+              .col-sm-7
+                p = @product.sku
+            - @product.property.each do |k,v|
+              .row
+                .col-sm-5
+                  p = Property.find_by_slug(k).name
+                .col-sm-7
+                  p = v
+            .row
+              .col-sm-5
+                p = t(".old_price")
+              .col-sm-7
+                p.product-item-price-sale = @product.old_price.present? ? number_to_currency(@product.old_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+            .row
+              .col-sm-5
+                p = t(".new_price")
+              .col-sm-7
+                p.product-item-price-on = @product.new_price.present? ? number_to_currency(@product.new_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+            .row
+              .col-sm-12
+                - if @facebook.like_active
+                  .fb-like data-action="like" data-href="#{request.original_url}" data-layout="button_count" data-share="true" data-show-faces="true" data-size="small"
+        .promo-text = t(".product_detail")
+        .detail-content
+          = raw @product.content
+          .facebook-block
+            - if @facebook.comment_active
+              .fb-comments data-href="#{request.original_url}" data-numposts="5" data-width="100%"
+        #shop-product.row
+          .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .heading
+              h2.heading-name Sản phẩm liên quan
+          #shop-product
+            - @products.each do |product|
+              .col-lg-4.col-md-4.col-sm-4.col-xs-6
+                .product-item
+                  .product-item-thumbnail
+                    .product-item-background
+                      .product-item-button
+                        = link_to t(".view_more"), show_product_view_index_path(params[:slug_cate], product.slug)
+                    .pd11-img
+                      = image_tag product.image.url(:small), class: "img-responsive"
+                  p.product-item-price
+                    span.product-item-price-on = product.new_price.present? ? number_to_currency(product.new_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+                    |&nbsp
+                    span.product-item-price-sale = product.old_price.present? ? number_to_currency(product.old_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+                  h3.product-item-name
+                    = link_to product.name.truncate(30), show_product_view_index_path(params[:slug_cate], product.slug)
+
+
+      .col-sm-3
+        = render "share/sidebar"

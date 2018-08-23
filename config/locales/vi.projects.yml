@@ -1,0 +1,23 @@
+vi:
+  projects:
+    index:
+      name: "Tên dự án"
+      slug: "Slug"
+      project_list: "Danh sách dự án"
+      new: "Thêm dự án"
+      feature: "Nổi bật"
+    form:
+      name: "Tên dự án"
+      slug: "Slug"
+      slug_example: "ten-san-pham"
+      description: "Thông tin chi tiết"
+      meta_keyword: "Thẻ meta keyword"
+      meta_title: "Thẻ meta title"
+      meta_description: "Thẻ meta description"
+      submit: "Tạo mới"
+      update: "Cập nhật"
+      category_ids: "Thuộc nhóm dự án"
+    new:
+      new: "Thêm dự án"
+    edit:
+      edit: "Chỉnh sửa"

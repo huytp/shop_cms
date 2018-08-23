@@ -1,0 +1,13 @@
+vi:
+  facebooks:
+    index:
+      facebook_settings: "Cài đặt Facebook"
+      app_id: "app_id"
+      enable_comment: "Cho phép bình luận"
+      enable_like: "Cho phép like"
+    edit:
+      edit: "Chỉnh sửa"
+    form:
+      app_id: "app_id"
+      enable_comment: "Cho phép bình luận"
+      enable_like: "Cho phép like"

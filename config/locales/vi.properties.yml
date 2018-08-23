@@ -1,0 +1,14 @@
+vi:
+  properties:
+    index:
+      property_list: "Danh sách các thuộc tính"
+      name: "Tên thuộc tính"
+      create: "Thêm thuộc tính"
+    new:
+      new_property: "Thêm thuộc tính"
+    form:
+      name: "Tên thuộc tính"
+      submit: "Tạo mới"
+      update: "Cập nhật"
+    edit:
+      edit_property: "Chỉnh sửa thuộc tính"

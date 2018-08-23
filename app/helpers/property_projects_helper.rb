@@ -1,0 +1,2 @@
+module PropertyProjectsHelper
+end

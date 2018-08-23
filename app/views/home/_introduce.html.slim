@@ -1,0 +1,35 @@
+.container.intro-block
+  .row
+    .col-lg-6.col-md-6.col-sm-12
+      .promo-block
+        .promo-text = t(".overview")
+      .marg30
+        p.about-text
+          = raw @overview.present? ? @overview.content.truncate(1200) : ""
+        p
+          a.tz-view-more href="#{ show_page_view_index_path("gioi-thieu")}"
+            span = t(".view_detail")
+    .col-lg-6.col-md-6.col-sm-12
+      .promo-block
+        .promo-text = t(".feature_project")
+      .row.marg30
+        - @feature_project_first.each do |project|
+          .col-lg-4.col-md-4.col-sm-4.col-xs-4.col-ms-12
+            .blog-main
+              .blog-images
+                a href="#{show_project_view_index_path("du-an", project.slug)}"
+                  = image_tag project.photo_projects.present? ? project.photo_projects.first.image.url(:small) : "default-photo.png"
+                p
+                  br
+                  = link_to project.name.truncate(45), show_project_view_index_path("du-an", project.slug)
+
+      .row.marg30
+        - @feature_project_last.each do |project|
+          .col-lg-4.col-md-4.col-sm-4.col-xs-4.col-ms-12
+            .blog-main
+              .blog-images
+                a href="#{show_project_view_index_path("du-an", project.slug)}"
+                  = image_tag project.photo_projects.present? ? project.photo_projects.first.image.url(:small) : "default-photo.png"
+                p
+                  br
+                  = link_to project.name.truncate(45), show_project_view_index_path("du-an", project.slug)

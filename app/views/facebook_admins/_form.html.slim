@@ -1,0 +1,14 @@
+= form_for(facebook_admin, html: {class: "form-inline"}) do |f|
+  - if facebook_admin.errors.any?
+    #error_explanation
+      h2
+        = pluralize(facebook_admin.errors.count, "error")
+        | prohibited this facebook_admin from being saved:
+      ul
+        - facebook_admin.errors.full_messages.each do |message|
+          li= message
+  .form-group
+    = f.label t(".admin_id")
+    = f.text_field :admin_id, class: "form-control"
+
+  button.btn.btn-default type="submit"  Submit

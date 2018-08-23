@@ -1,0 +1,16 @@
+vi:
+  supports:
+    index:
+      support_list: "Danh sách thành viên hỗ trợ trực tuyến"
+      name: "Tên"
+      phone: "Số điện thoại"
+      skype: "Tài khoản skype"
+      new: "Thêm mới"
+    form:
+      name: "Tên"
+      phone: "Số điện thoại"
+      skype: "Tài khoản skype"
+    new:
+      new: "Thêm người hỗ trợ"
+    edit:
+      edit: "Chỉnh sửa"

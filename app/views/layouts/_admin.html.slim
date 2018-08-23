@@ -1,0 +1,88 @@
+#wrapper-admin.wrapper-admin
+  /! Navigation
+  nav.navbar.navbar-default.navbar-static-top role="navigation" style=("margin-bottom: 0")
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to I18n.t(".appnet_admin_tool"), admin_path, class: "navbar-brand"
+    /! /.navbar-header
+    ul.nav.navbar-top-links.navbar-right
+      li.dropdown
+        a.dropdown-toggle data-toggle="dropdown" href="#"
+          i.fa.fa-user.fa-fw
+          i.fa.fa-caret-down
+        ul.dropdown-menu.dropdown-user
+          / li
+          /   a href="#"
+          /     i.fa.fa-user.fa-fw
+          /     | User Profile
+          / li
+          /   a href="#"
+          /     i.fa.fa-gear.fa-fw
+          /     | Settings
+          / li.divider
+          li
+            = link_to t(".logout"), destroy_user_session_path, method: :DELETE
+        /! /.dropdown-user
+      /! /.dropdown
+    /! /.navbar-top-links
+    .navbar-default.sidebar role="navigation"
+      .sidebar-nav.navbar-collapse
+        ul#side-menu.nav
+          li
+            = link_to pages_path
+              i.fa.fa-files-o.fa-fw
+              = I18n.t(".page_text")
+          li
+            a href="#"
+              i.fa.fa-pencil-square-o.fa-fw
+              = I18n.t(".post_text")
+              span.fa.arrow
+            ul.nav.nav-second-level
+              li
+                = link_to I18n.t(".category_post"), category_posts_path
+              li
+                = link_to I18n.t(".post_index"), posts_path
+
+          li
+            a href="#"
+              i.fa.fa-th-large.fa-fw
+              = I18n.t(".product_text")
+              span.fa.arrow
+            ul.nav.nav-second-level
+              li
+                = link_to I18n.t(".property_text"), properties_path
+              li
+                = link_to I18n.t(".taxonomy_text"), categories_path
+              li
+                = link_to I18n.t(".product_list_text"), products_path
+          li
+            a href="#"
+              i.fa.fa-briefcase.fa-fw
+              = I18n.t(".project_text")
+              span.fa.arrow
+            ul.nav.nav-second-level
+              li
+                = link_to I18n.t(".property_project"), property_projects_path
+              li
+                = link_to I18n.t(".category_project"), category_projects_path
+              li
+                = link_to I18n.t(".project_list_text"), projects_path
+          li
+            a href="#"
+              i.fa.fa-briefcase.fa-fw
+              = I18n.t(".settings_text")
+              span.fa.arrow
+            ul.nav.nav-second-level
+              li
+                = link_to I18n.t(".facebook_setting_text"), facebooks_path
+              li
+                = link_to I18n.t(".facebook_admin_text"), facebook_admins_path
+              li
+                = link_to I18n.t(".support_text"), supports_path
+
+  #page-wrapper
+    = yield

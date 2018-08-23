@@ -1,0 +1,7 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new_post")
+  br
+  = render 'form', post: @post
+  = link_to 'Back', posts_path

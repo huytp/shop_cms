@@ -1,0 +1,83 @@
+#shop-body {
+  #shop-main {
+    .share {
+      .each-block {
+        border: 1px solid rgba(204, 204, 204, 0.44);
+        background: #fff;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+      .heading {
+        margin-bottom: 5px;
+        border-bottom: 1px solid #ebebeb;
+        .heading-name {
+          width: 100%;
+          display: inline-block;
+          height: 45px;
+          margin: 0;
+          padding: 0 20px;
+          font-size: 15px;
+          line-height: 45px;
+          color: #ffffff;
+          text-align: center;
+          text-transform: uppercase;
+          background-color: #38B04A;
+        }
+        .heading-name::before{
+          content:"";
+          display:inline-block;
+          height:14px;
+          width:21px;
+          margin-right:10px;
+          background-image:image-url("bg-heading.png");
+          background-repeat:no-repeat;
+        }
+      }
+
+      .bottom {
+        .each-support-block {
+          margin: auto;
+          border-bottom: 1px solid #38B04A;
+          margin-bottom: 20px;
+          img.skype-logo {
+            margin-left: 5px;
+          }
+        }
+        ul.news-list {
+          padding: 0px;
+          img {
+            width: 100%;
+          }
+          li {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            list-style: none;
+          }
+          a {
+            color: #333;
+          }
+        }
+        ul.category-list {
+          padding: 0px;
+          li {
+            margin-left: 10px;
+            margin-right: 10px;
+            list-style: none;
+          }
+          a {
+            width: 100%;
+            display: block;
+            text-transform: uppercase;
+            color: #333;
+            font-size: 15px;
+            border-bottom: 1px solid #38B04A;
+            padding: 6px 2%;
+            font-size: 13px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

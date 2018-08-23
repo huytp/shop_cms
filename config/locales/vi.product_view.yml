@@ -1,0 +1,12 @@
+vi:
+  product_view:
+    index:
+      contact: "Liên hệ"
+      view_more: "Xem chi tiết"
+    show:
+      product_overview: "Chi tiết sản phẩm"
+      product_detail: "Thông tin chi tiết"
+      name: "Tên sản phẩm:"
+      sku: "Mã sản phẩm:"
+      old_price: "Giá gốc:"
+      new_price: "Giá khuyến mãi:"

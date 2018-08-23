@@ -1,0 +1,10 @@
+vi:
+  facebook_admins:
+    index:
+      facebook_admin: "Danh sách toàn khoản facebook quản lý app"
+      add: "Thêm tài khoản"
+      admin_id: "admin_id"
+    new:
+      new: "Thêm tài khoản"
+    form:
+      admin_id: "admin id: "

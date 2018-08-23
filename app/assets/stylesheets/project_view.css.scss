@@ -1,0 +1,49 @@
+#shop-body {
+  #shop-main {
+    .project-view {
+      .promo-text {
+        margin-left: 15px;
+      }
+      .main-content {
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+      #project-page {
+        margin-top: 20px;
+        ul.row-no-padding {
+          padding-left: 0px;
+          li {
+            list-style: none;
+            margin-bottom: 30px;
+            span {
+              width: 80%;
+              display: block;
+            }
+          }
+        }
+        .image-slider {
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+          }
+        }
+        .project-details {
+          p {
+            font-size: 16px;
+            border-bottom: 1px dashed #AFA4A4;
+            padding-bottom: 5px;
+          }
+          .col-sm-7 p {
+            color: #aaa
+          }
+          .detail {
+            font-size: 16px;
+            padding-bottom: 5px;
+          }
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

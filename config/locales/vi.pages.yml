@@ -1,0 +1,23 @@
+vi:
+  pages:
+    form:
+      title: "Tiêu đề"
+      slug: "Slug"
+      slug_example: "tieu-de-bai-viet"
+      content: "Nội dung"
+      meta_keyword: "Thẻ meta keyword"
+      meta_title: "Thẻ meta title"
+      meta_description: "Thẻ meta description"
+      image: "Hình ảnh"
+      submit: "Thêm bài mới"
+      update: "Cập nhật"
+    new:
+      new_page: "Tạo trang mới"
+    edit:
+      edit: "Chỉnh sửa bài viết"
+    index:
+      page_text: "Danh sách trang"
+      title: "Tiêu đề"
+      content: "Nội dung"
+      image: "Hình ảnh"
+      new_page: "Tạo trang mới"

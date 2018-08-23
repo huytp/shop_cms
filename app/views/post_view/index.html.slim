@@ -1,0 +1,18 @@
+.post-view
+  .container
+    .row
+      .col-sm-9
+        .promo-text  = @category_name
+        .main-content
+          - @posts.each do |post|
+            .row.each-post
+              .col-sm-5.col-lg-5
+                = image_tag post.image.url(:large)
+              .col-sm-7.col-lg-7
+                p.post-title = post.title
+                p.post-content = raw post.content.truncate(210)
+                a.tz-view-more href="#{show_post_view_index_path(params[:slug_cate], post.slug)}"
+                  span = t(".view_more")
+
+      .col-sm-3
+        = render "share/sidebar"

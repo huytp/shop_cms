@@ -1,0 +1,9 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".edit")
+  br
+  = render 'form', product: @product
+  = link_to 'Show', @product
+  |&nbsp|&nbsp
+  = link_to 'Back', products_path

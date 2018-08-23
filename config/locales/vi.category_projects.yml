@@ -1,0 +1,15 @@
+vi:
+  category_projects:
+    index:
+      manager_category: "Quản lý chuyên mục"
+      category_tree: "Cây chuyên mục"
+      add_category: "Thêm chuyên  mục"
+      title: "Tên chuyên mục: "
+      slug: "Slug: "
+      slug_example: "ten-chuyen-muc"
+      parent: "Thuộc thư mục cha: "
+      add: "Thêm mới"
+      no_depend: "Không thuộc thư mục nào"
+      choose-category: "Chọn thư mục muốn xóa"
+      delete_category: "Xóa thư mục"
+      delete: "Xóa"

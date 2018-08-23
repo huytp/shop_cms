@@ -1,0 +1,24 @@
+vi:
+  posts:
+    form:
+      title: "Tiêu đề"
+      slug: "Slug"
+      slug_example: "tieu-de-bai-viet"
+      category_ids: "Thuộc chuyên mục"
+      content: "Nội dung"
+      meta_keyword: "Thẻ meta keyword"
+      meta_title: "Thẻ meta title"
+      meta_description: "Thẻ meta description"
+      image: "Hình ảnh"
+      submit: "Thêm bài mới"
+      update: "Cập nhật"
+    new:
+      new_post: "Tạo bài viết mới"
+    edit:
+      edit: "Chỉnh sửa bài viết"
+    index:
+      post_text: "Danh sách bài viết"
+      title: "Tiêu đề"
+      content: "Nội dung"
+      image: "Hình ảnh"
+      new_post: "Tạo bài viết mới"

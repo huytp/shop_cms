@@ -1,0 +1,7 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new_page")
+  br
+  = render 'form', page: @page
+  = link_to 'Back', pages_path

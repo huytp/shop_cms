@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  app_id: MyString
+  comment_active: false
+  like_active: false
+
+two:
+  app_id: MyString
+  comment_active: false
+  like_active: false

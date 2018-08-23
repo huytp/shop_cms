@@ -1,0 +1,9 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".edit")
+  br
+  = render 'form', post: @post
+  = link_to 'Show', @post
+  |&nbsp|&nbsp
+  = link_to 'Back', posts_path

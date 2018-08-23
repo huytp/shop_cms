@@ -1,0 +1,26 @@
+.product-view
+  .container
+    .row
+      .col-sm-9
+        .promo-text = @category_name
+        .main-content#shop-product
+          .row
+            - @products.each do |product|
+              .col-lg-4.col-md-4.col-sm-4.col-xs-6
+                .product-item
+                  .product-item-thumbnail
+                    .product-item-background
+                      .product-item-button
+                        = link_to t(".view_more"), show_product_view_index_path(params[:slug_cate], product.slug)
+                    .pd11-img
+                      = image_tag product.image.url(:small), class: "img-responsive"
+                  p.product-item-price
+                    span.product-item-price-on = product.new_price.present? ? number_to_currency(product.new_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+                    |&nbsp
+                    span.product-item-price-sale = product.old_price.present? ? number_to_currency(product.old_price, unit: "đ", format: "%n %u", precision: 0, delimiter: ".") : t(".contact")
+                  h3.product-item-name
+                    = link_to product.name.truncate(30), show_product_view_index_path(params[:slug_cate], product.slug)
+
+
+      .col-sm-3
+        = render "share/sidebar"

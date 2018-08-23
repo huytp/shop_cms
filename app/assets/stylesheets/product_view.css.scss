@@ -1,0 +1,34 @@
+#shop-body {
+  #shop-main {
+    .product-view {
+      .main-content {
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+    }
+    .product-view-show {
+      .main-content {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        img {
+          width: 100%;
+        }
+        p {
+          font-size: 16px;
+          border-bottom: 1px dashed #AFA4A4;
+          padding-bottom: 5px;
+        }
+        .col-sm-7 p {
+          color: #aaa
+        }
+      }
+      .detail-content {
+        padding: 20px 20px;
+        border: 1px solid rgba(204, 204, 204, 0.44);
+        background: #fff;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

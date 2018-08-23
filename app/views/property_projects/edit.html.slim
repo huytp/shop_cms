@@ -1,0 +1,9 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".edit_property")
+  br
+  = render 'form', property_project: @property_project
+  = link_to 'Show', @property_project
+  |&nbsp|&nbsp
+  = link_to 'Back', property_projects_path

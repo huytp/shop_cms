@@ -1,0 +1,16 @@
+.post-view
+  .container
+    .row
+      .col-sm-9
+        .promo-text  = @post.title
+        .main-content-show
+          = raw @post.content
+          .facebook-block
+            - if @facebook.like_active
+              .fb-like data-action="like" data-href="#{request.original_url}" data-layout="button_count" data-share="true" data-show-faces="true" data-size="small"
+            - if @facebook.comment_active
+              .fb-comments data-href="#{request.original_url}" data-numposts="5" data-width="100%"
+
+
+      .col-sm-3
+        = render "share/sidebar"

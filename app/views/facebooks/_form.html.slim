@@ -1,0 +1,29 @@
+= form_for(facebook, html: {class: "form-horizontal"}) do |f|
+  - if facebook.errors.any?
+    #error_explanation
+      h2
+        = pluralize(facebook.errors.count, "error")
+        | prohibited this facebook from being saved:
+      ul
+        - facebook.errors.full_messages.each do |message|
+          li= message
+  .form-group
+
+    = f.label :app_id, class: "control-label col-sm-2"
+    .col-sm-10
+      = f.text_field t(".app_id"), class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        label
+          = f.check_box :comment_active
+          = t(".enable_comment")
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      .checkbox
+        label
+          = f.check_box :like_active
+          = t(".enable_like")
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit

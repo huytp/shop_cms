@@ -1,0 +1,39 @@
+.col-sm-12
+  = form_for(project) do |f|
+    - if project.errors.any?
+      #error_explanation
+        h2
+          = pluralize(project.errors.count, "error")
+          | prohibited this project from being saved:
+        ul
+          - project.errors.full_messages.each do |message|
+            li= message
+    .row
+      .form-group.col-sm-6
+        = f.label t(".name")
+        = f.text_field :name, class: "form-control"
+      .form-group.col-sm-6
+        = f.label t(".slug"), class: "control-label"
+        = f.text_field :slug, class: "form-control", placeholder: t(".slug_example")
+    .form-group
+      = f.label t(".category_ids"), class: "control-label"
+      = select_tag 'projects[category_ids]', options_for_select(@categories, selected: @categories_select), multiple: true, required: true, class: "selectpicker form-control"
+    .form-group
+      = f.label t(".description"), class: "control-label"
+      = f.cktext_area :description, class: "form-control"
+    .row
+      - @properties.each do |property|
+        .form-group.col-sm-3
+          = f.label property.name, class: "control-label"
+          = text_field_tag "property[#{property.slug}]", project.property[property.slug], class: "form-control"
+    .form-group
+      = f.label t(".meta_title"), class: "control-label"
+      = f.text_field :meta_title, class: "form-control"
+    .form-group
+      = f.label t(".meta_keyword"), class: "control-label"
+      = f.text_field :meta_keyword, class: "form-control"
+    .form-group
+      = f.label t(".meta_description"), class: "control-label"
+      = f.text_field :meta_description, class: "form-control"
+    .form-group
+      = f.submit params[:action] == "new" ? t(".submit") : t(".update"), class: "btn btn-success"

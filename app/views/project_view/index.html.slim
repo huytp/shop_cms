@@ -1,0 +1,18 @@
+.project-view
+  .container
+    .promo-text = t(".projects")
+    #project-page
+      .grid.hover-3
+        ul.row-no-padding
+          - @projects.each do |project|
+            li.col-sm-3
+              .cbp-item-wrapper
+                .portfolio-main
+                  figure
+                    a href="#{show_project_view_index_path(params[:slug_cate], project.slug)}"
+                      = image_tag project.photo_projects.present? ? project.photo_projects.first.image.url(:medium) : "default-photo.png"
+                    figcaption
+                      span = project.name
+                      a.portfolio-search href="#{show_project_view_index_path(params[:slug_cate], project.slug)}"
+                        i.fa.fa-search
+

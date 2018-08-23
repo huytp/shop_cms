@@ -1,0 +1,7 @@
+p
+.panel.panel-default
+  .panel-heading
+    h3 = t(".new_property")
+  br
+  = render 'form', property: @property
+  = link_to 'Back', properties_path

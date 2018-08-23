@@ -1,0 +1,44 @@
+footer#footer
+  .footer-top
+    .container
+      .row
+        .col-sm-4
+          .thongtin
+            p.title_thongtin thông tin
+            .clear
+            p.company APPNET – Digital Marketing
+            p
+              i.fa.fa-home
+              |    Kios 8, 142 Tô Hiến Thành, Phường 14, Quận 10, TP.HCM
+            p
+              i.fa.fa-phone
+              |    Hotline: 0862 70 30 30
+            p
+              i.fa-envelope
+              |    marketing@appnet.edu.vn
+            p
+              i.fa.fa-globe
+              |    appnet.edu.vn
+            .clear
+
+        .col-sm-4
+          .hotro
+            p.title_hotro hỗ trợ
+            = link_to t(".contact"), show_page_view_index_path("lien-he")
+            = link_to t(".map"), show_page_view_index_path("lien-he")
+            = link_to t(".payment_method"), show_page_view_index_path("hinh-thuc-thanh-toan")
+            = link_to t(".sale_off_news"), index_post_view_index_path("tin-khuyen-mai")
+            = link_to t(".recruitment"), index_post_view_index_path("tin-tuyen-dung")
+
+        .col-sm-4
+          .lienket
+            p.title_lienket liên kết
+            p
+              a href="javascript:void(0)" target="_blank" title="facebook"
+                = image_tag "facebook.png", class: "img_mxh"
+              a href="javascript:void(0)" target="_blank" title="google"
+                = image_tag "google.png"
+      .row
+        a.copyright href="javascript:void(0)" Copyright © 2017 by your_company
+
+
